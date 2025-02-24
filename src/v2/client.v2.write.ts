@@ -20,11 +20,10 @@ import type {
   UserV2MuteResult,
   UserV2UnfollowResult,
   TweetV2BookmarkResult,
-  EUploadMimeType,
 } from '../types';
 import TwitterApiv2LabsReadWrite from '../v2-labs/client.v2.labs.write';
 import { CreateDMConversationParams, PostDMInConversationParams, PostDMInConversationResult } from '../types/v2/dm.v2.types';
-import { MediaV2MediaCategory, MediaV2UploadAppendParams, MediaV2UploadFinalizeParams, MediaV2UploadInitParams, MediaV2UploadResponse } from '../types/v2/media.v2.types';
+import { MediaV2MediaCategory, MediaV2MimeType, MediaV2UploadAppendParams, MediaV2UploadFinalizeParams, MediaV2UploadInitParams, MediaV2UploadResponse } from '../types/v2/media.v2.types';
 
 /**
  * Base Twitter v2 client with read/write rights.
@@ -134,7 +133,7 @@ export default class TwitterApiv2ReadWrite extends TwitterApiv2ReadOnly {
    */
   public async uploadMedia(
     media: Buffer,
-    options: { media_type: EUploadMimeType; media_category?: MediaV2MediaCategory },
+    options: { media_type: MediaV2MimeType; media_category?: MediaV2MediaCategory },
     chunkSize: number = 1024 * 1024
   ): Promise<string> {
     let media_category = options.media_category;

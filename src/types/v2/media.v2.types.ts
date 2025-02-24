@@ -1,4 +1,5 @@
-export type MediaV2MediaCategory = 'tweet_image' | 'tweet_video' | 'tweet_gif' | 'dm_image' | 'dm_video' | 'dm_gif' | 'subtitles';
+export type MediaV2MimeType = 'image/jpeg' | 'video/mp4' | 'video/quicktime' | 'image/gif' | 'image/png' | 'text/plain' | 'image/webp';
+export type MediaV2MediaCategory = 'tweet_image' | 'tweet_video' | 'tweet_gif' | 'dm_image' | 'dm_video' | 'dm_gif' | 'subtitle';
 
 export interface MediaV2UploadInitParams {
   command: 'INIT';
